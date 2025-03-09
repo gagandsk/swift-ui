@@ -16,6 +16,14 @@ struct ContentView: View {
             .multilineTextAlignment(.trailing)
             .bold()
             .underline()
+        
+        
+        Circle()
+            .background(Color.green)
+            .padding()
+            .background(Color.red)
+            .frame(width: 200, height: 200)
+        
     }
 }
 
