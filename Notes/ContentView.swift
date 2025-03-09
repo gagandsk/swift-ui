@@ -78,15 +78,12 @@ struct ContentView: View {
                 .background(Color.blue)
                 .cornerRadius(4)
         */
-        VStack(alignment: .center, spacing: 20){
+        HStack(alignment: .bottom, spacing: 20){
             Text("Nunca")
             Text("pares")
-            Spacer()
-            Text("de")
+            Text("de").font(.largeTitle)
             Text("aprender")
         }
-        .frame(height: 300)
-        
     }
 }
 
