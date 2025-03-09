@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @ViewBuilder
+    func CardSmallView() -> some View {
+        HStack(spacing: 20) {
+            Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
+            Text("This is a example of a preview")
+            Image(systemName: "heart").foregroundStyle(.red)
+            
+        }
+    }
+    
     var body: some View {
-        
         /*
         Text("Nunca pares de Aprender")
             .font(.system(size: 50))
@@ -101,6 +111,7 @@ struct ContentView: View {
         }
         */
         
+        /*
         ZStack(alignment: .center){
             VStack{
                 Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
@@ -111,6 +122,27 @@ struct ContentView: View {
                 Text("This is a example of a preview")
             }
         }
+         */
+        
+        ScrollView{
+            VStack{
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+                CardSmallView()
+            }
+        }
+        
     }
 }
 
