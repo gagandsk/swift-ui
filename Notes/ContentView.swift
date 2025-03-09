@@ -24,12 +24,17 @@ struct ContentView: View {
             .background(Color.red)
             .frame(width: 200, height: 200)
         
-        
         Rectangle()
             .frame(width: 200, height: 200)
             .foregroundStyle(Color.yellow)
             .cornerRadius(100)
             .opacity(0.5)
+    
+        Ellipse()
+            .stroke(lineWidth: 5)
+            .frame(width: 200, height: 400)
+            .foregroundStyle(Color.red)
+            .rotationEffect(Angle(degrees: 30))
         
     }
 }
