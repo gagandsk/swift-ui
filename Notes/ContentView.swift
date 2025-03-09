@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
+        /*
         Text("Nunca pares de Aprender")
             .font(.system(size: 50))
             .lineLimit(2)
@@ -31,13 +32,13 @@ struct ContentView: View {
             .cornerRadius(100)
             .opacity(0.5)
         
-        /*
+        
         Ellipse()
             .stroke(lineWidth: 5)
             .frame(width: 200, height: 400)
             .foregroundStyle(Color.red)
             .rotationEffect(Angle(degrees: 30))
-        */
+        
     
         RoundedRectangle(cornerRadius: 25)
             .stroke(style: .init(lineWidth: 15))
@@ -56,7 +57,13 @@ struct ContentView: View {
                     .foregroundStyle(.white)
                     .font(.system(size: 20, weight: .semibold))
             }
-         
+         */
+        
+        Image(systemName: "star")
+            .font(.largeTitle)
+            .bold()
+            .foregroundStyle(.yellow)
+        
         
     }
 }
