@@ -59,10 +59,12 @@ struct ContentView: View {
             }
          */
         
-        Image(systemName: "star.fill")
+        Image("logo")
             .resizable()
-            .frame(width: 100, height: 100)
+            .aspectRatio(contentMode: .fit)
+            .frame(width: 200, height: 200)
             .foregroundStyle(.yellow)
+            .background(.gray)
         
         
     }
