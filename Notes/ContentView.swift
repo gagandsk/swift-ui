@@ -15,8 +15,9 @@ struct ContentView: View {
             Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
             Text("This is a example of a preview")
             Image(systemName: "heart").foregroundStyle(.red)
-            
         }
+        .padding(2)
+        .background(.green)
     }
     
     @ViewBuilder
@@ -152,6 +153,8 @@ struct ContentView: View {
             VStack{
                 ForEach(0..<40) {_ in
                     CardLargeView()
+                    CardSmallView()
+                    CardSmallView()
                 }
             }
         }
