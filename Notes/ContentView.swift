@@ -78,11 +78,11 @@ struct ContentView: View {
                 .background(Color.blue)
                 .cornerRadius(4)
         */
-        HStack(alignment: .bottom, spacing: 20){
-            Text("Nunca")
-            Text("pares")
-            Text("de").font(.largeTitle)
-            Text("aprender")
+        ZStack(alignment: .center){
+            Color.green
+            Circle()
+            Rectangle().foregroundStyle(Color.yellow).frame(width: 100, height: 100)
+            Text("Hello, World!")
         }
     }
 }
