@@ -124,8 +124,8 @@ struct ContentView: View {
         }
          */
         
-        ScrollView{
-            VStack{
+        ScrollView(.horizontal){
+            HStack{
                 CardSmallView()
                 CardSmallView()
                 CardSmallView()
