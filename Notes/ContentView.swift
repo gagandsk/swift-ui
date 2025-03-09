@@ -59,12 +59,23 @@ struct ContentView: View {
             }
          */
         
+        /*
         Image("logo")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 200, height: 200)
             .foregroundStyle(.yellow)
             .background(.gray)
+        */
+        Button(action: {}, label: {
+                    Image("logo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 50, height: 50)
+                })
+                .frame(width:300, height: 75)
+                .background(Color.blue)
+                .cornerRadius(4)
         
         
     }
