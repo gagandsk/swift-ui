@@ -126,20 +126,9 @@ struct ContentView: View {
         
         ScrollView(.horizontal){
             HStack{
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
-                CardSmallView()
+                ForEach(0..<20) { _ in
+                    CardSmallView()
+                }
             }
         }
         
