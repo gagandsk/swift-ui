@@ -67,6 +67,7 @@ struct ContentView: View {
             .foregroundStyle(.yellow)
             .background(.gray)
         */
+        /*
         Button(action: {}, label: {
                     Image("logo")
                         .resizable()
@@ -76,7 +77,15 @@ struct ContentView: View {
                 .frame(width:300, height: 75)
                 .background(Color.blue)
                 .cornerRadius(4)
-        
+        */
+        VStack(alignment: .center, spacing: 20){
+            Text("Nunca")
+            Text("pares")
+            Spacer()
+            Text("de")
+            Text("aprender")
+        }
+        .frame(height: 300)
         
     }
 }
