@@ -92,11 +92,24 @@ struct ContentView: View {
             }
         }
         */
+        /*
         HStack(spacing: 20) {
             Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
             Text("This is a example of a preview")
             Image(systemName: "heart").foregroundStyle(.red)
             
+        }
+        */
+        
+        ZStack(alignment: .center){
+            VStack{
+                Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
+                HStack{
+                    Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
+                }
+                
+                Text("This is a example of a preview")
+            }
         }
     }
 }
