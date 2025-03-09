@@ -59,7 +59,7 @@ struct ContentView: View {
             }
          */
         
-        Image(systemName: "star")
+        Image(systemName: "star.fill")
             .resizable()
             .frame(width: 100, height: 100)
             .foregroundStyle(.yellow)
