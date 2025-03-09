@@ -78,6 +78,7 @@ struct ContentView: View {
                 .background(Color.blue)
                 .cornerRadius(4)
         */
+        /*
         ZStack(alignment: .center){
             Color.green
             Circle()
@@ -89,6 +90,13 @@ struct ContentView: View {
                 Text("Hello, !").bold().font(.system(size: 25))
                 Text("World!").bold().font(.system(size: 25))
             }
+        }
+        */
+        HStack(spacing: 20) {
+            Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
+            Text("This is a example of a preview")
+            Image(systemName: "heart").foregroundStyle(.red)
+            
         }
     }
 }
