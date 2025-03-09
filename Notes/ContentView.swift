@@ -81,8 +81,14 @@ struct ContentView: View {
         ZStack(alignment: .center){
             Color.green
             Circle()
-            Rectangle().foregroundStyle(Color.yellow).frame(width: 100, height: 100)
-            Text("Hello, World!")
+            HStack(spacing: 0) {
+                Rectangle().foregroundStyle(Color.red).frame(width: 100, height: 100)
+                Rectangle().foregroundStyle(Color.blue).frame(width: 100, height: 100)
+            }
+            VStack{
+                Text("Hello, !").bold().font(.system(size: 25))
+                Text("World!").bold().font(.system(size: 25))
+            }
         }
     }
 }
