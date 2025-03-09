@@ -19,6 +19,21 @@ struct ContentView: View {
         }
     }
     
+    @ViewBuilder
+    func CardLargeView() -> some View {
+        ZStack(alignment: .center){
+            VStack{
+                Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
+                HStack{
+                    Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
+                }
+                
+                Text("This is a example of a preview")
+            }
+            .padding(3)
+        }
+    }
+    
     var body: some View {
         /*
         Text("Nunca pares de Aprender")
@@ -123,7 +138,7 @@ struct ContentView: View {
             }
         }
          */
-        
+        /*
         ScrollView(.horizontal){
             HStack{
                 ForEach(0..<20) { _ in
@@ -131,7 +146,15 @@ struct ContentView: View {
                 }
             }
         }
+        */
         
+        ScrollView(.vertical){
+            VStack{
+                ForEach(0..<40) {_ in
+                    CardLargeView()
+                }
+            }
+        }
     }
 }
 
