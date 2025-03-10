@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
+    @StateObject var appInfo = AppInfo()
     
     var body: some View {
         /*
@@ -126,6 +126,7 @@ struct ContentView: View {
         */
         
         NListView()
+            .environmentObject(appInfo)
     }
 }
 
