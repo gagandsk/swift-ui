@@ -36,19 +36,20 @@ struct ContentView: View {
             Image(systemName: "heart").foregroundStyle(.red)
         }
         .padding(2)
+        .background(.green)
         .listRowSeparator(.hidden)
     }
     
     @ViewBuilder
-    func CardLargeView() -> some View {
+    func CardLargeView(card: NCard) -> some View {
         ZStack(alignment: .center){
             VStack{
                 Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
                 HStack{
-                    Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
+                    Text(card.title).frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
                 }
                 
-                Text("This is a example of a preview")
+                Text(card.text)
             }
             .padding(3)
             .listRowSeparator(.hidden)
@@ -172,6 +173,7 @@ struct ContentView: View {
         List{
             ForEach(cards) {card in
                 CardSmallView(card: card)
+                CardLargeView(card: card)
             }
         }
         .listStyle(.plain)
