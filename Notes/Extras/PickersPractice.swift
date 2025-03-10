@@ -25,9 +25,9 @@ struct PickersPractice: View {
         }
         .pickerStyle(.segmented)
         */
-        Picker("Tamaños", selection: $size){
-            Text("Pequeño").tag(NcardType.small)
-            Text("Mediano").tag(NcardType.medium)
+        Picker("Tamaños", selection: $size) {
+            Label("Pequeño", systemImage: "widget.small").tag(NcardType.small)
+            Label("Mediano", systemImage: "widget.medium").tag(NcardType.medium)
         }
     }
 }
