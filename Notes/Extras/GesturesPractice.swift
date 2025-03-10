@@ -15,6 +15,9 @@ struct GesturesPractice: View {
             .onTapGesture(count: 2) {
                 color = .red
             }
+            .onLongPressGesture{
+                color = .blue
+            }
     }
 }
 
