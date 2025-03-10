@@ -11,6 +11,7 @@ struct PickersPractice: View {
     @State var date: Date = Date()
     var body: some View {
         DatePicker("date", selection: $date, displayedComponents: [.hourAndMinute])
+            .datePickerStyle(.wheel)
             .padding()
     }
 }
