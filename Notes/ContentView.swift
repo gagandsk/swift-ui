@@ -36,7 +36,7 @@ struct ContentView: View {
             Image(systemName: "heart").foregroundStyle(.red)
         }
         .padding(2)
-        .background(.green)
+        .background(.gray.opacity(0.1))
         .listRowSeparator(.hidden)
     }
     
@@ -52,6 +52,7 @@ struct ContentView: View {
                 Text(card.text)
             }
             .padding(3)
+            .background(.gray.opacity(0.1))
             .listRowSeparator(.hidden)
         }
     }
@@ -172,8 +173,14 @@ struct ContentView: View {
         
         List{
             ForEach(cards) {card in
-                CardSmallView(card: card)
-                CardLargeView(card: card)
+                switch card.type {
+                    case .small:
+                        CardSmallView(card: card)
+                    case .medium:
+                        CardLargeView(card: card)
+                }
+                
+                
             }
         }
         .listStyle(.plain)
