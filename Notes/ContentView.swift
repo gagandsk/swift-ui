@@ -7,17 +7,35 @@
 
 import SwiftUI
 
+struct NCard: Identifiable {
+    let id = UUID()
+    let title: String
+    let text: String
+    let type: NcardType
+}
+
+enum NcardType {
+    case small
+    case medium
+}
+
 struct ContentView: View {
     
+    let cards: [NCard] = [
+        NCard(title: "Card 1", text: "Texto del card 1", type: .small),
+        NCard(title: "Card 2", text: "Texto del card 2", type: .medium),
+        NCard(title: "Card 3", text: "Texto del card 3", type: .small),
+        NCard(title: "Card 4", text: "Texto del card 4", type: .small)
+    ]
+    
     @ViewBuilder
-    func CardSmallView() -> some View {
+    func CardSmallView(card: NCard) -> some View {
         HStack(spacing: 20) {
-            Text("Hello, World!").frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
-            Text("This is a example of a preview")
+            Text(card.title).frame(width: 200,height: 40).padding(5).background(.blue).cornerRadius(10)
+            Text(card.text)
             Image(systemName: "heart").foregroundStyle(.red)
         }
         .padding(2)
-        .background(.green)
         .listRowSeparator(.hidden)
     }
     
@@ -152,10 +170,8 @@ struct ContentView: View {
         */
         
         List{
-            ForEach(0..<40) {_ in
-                CardLargeView()
-                CardSmallView()
-                CardSmallView()
+            ForEach(cards) {card in
+                CardSmallView(card: card)
             }
         }
         .listStyle(.plain)
