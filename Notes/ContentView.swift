@@ -18,6 +18,7 @@ struct ContentView: View {
         }
         .padding(2)
         .background(.green)
+        .listRowSeparator(.hidden)
     }
     
     @ViewBuilder
@@ -32,6 +33,7 @@ struct ContentView: View {
                 Text("This is a example of a preview")
             }
             .padding(3)
+            .listRowSeparator(.hidden)
         }
     }
     
@@ -149,15 +151,14 @@ struct ContentView: View {
         }
         */
         
-        ScrollView(.vertical){
-            VStack{
-                ForEach(0..<40) {_ in
-                    CardLargeView()
-                    CardSmallView()
-                    CardSmallView()
-                }
+        List{
+            ForEach(0..<40) {_ in
+                CardLargeView()
+                CardSmallView()
+                CardSmallView()
             }
         }
+        .listStyle(.plain)
     }
 }
 
