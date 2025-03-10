@@ -7,18 +7,6 @@
 
 import SwiftUI
 
-struct NCard: Identifiable {
-    let id = UUID()
-    let title: String
-    let text: String
-    let type: NcardType
-}
-
-enum NcardType {
-    case small
-    case medium
-}
-
 struct ContentView: View {
     
     let cards: [NCard] = [
@@ -27,35 +15,6 @@ struct ContentView: View {
         NCard(title: "Card 3", text: "Texto del card 3", type: .small),
         NCard(title: "Card 4", text: "Texto del card 4", type: .small)
     ]
-    
-    @ViewBuilder
-    func CardSmallView(card: NCard) -> some View {
-        HStack(spacing: 20) {
-            Text(card.title).frame(width: 200,height: 40).padding(5).background(.blue).cornerRadius(10)
-            Text(card.text)
-            Image(systemName: "heart").foregroundStyle(.red)
-        }
-        .padding(2)
-        .background(.gray.opacity(0.1))
-        .listRowSeparator(.hidden)
-    }
-    
-    @ViewBuilder
-    func CardLargeView(card: NCard) -> some View {
-        ZStack(alignment: .center){
-            VStack{
-                Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
-                HStack{
-                    Text(card.title).frame(width: 150,height: 40).padding(5).background(.blue).cornerRadius(10)
-                }
-                
-                Text(card.text)
-            }
-            .padding(3)
-            .background(.gray.opacity(0.1))
-            .listRowSeparator(.hidden)
-        }
-    }
     
     var body: some View {
         /*
@@ -173,12 +132,6 @@ struct ContentView: View {
         
         List{
             ForEach(cards) {card in
-                switch card.type {
-                    case .small:
-                        CardSmallView(card: card)
-                    case .medium:
-                        CardLargeView(card: card)
-                }
                 
                 
             }
