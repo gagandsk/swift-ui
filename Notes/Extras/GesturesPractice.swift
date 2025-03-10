@@ -12,7 +12,7 @@ struct GesturesPractice: View {
     var body: some View {
         Circle()
             .foregroundStyle(color)
-            .onTapGesture {
+            .onTapGesture(count: 2) {
                 color = .red
             }
     }
