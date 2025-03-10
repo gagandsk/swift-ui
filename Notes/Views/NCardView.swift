@@ -79,13 +79,13 @@ struct NCardView: View {
 
 #Preview {
     VStack{
-        NCardView(card: NCard(title: "Hello", text: "World", type: .small))
-        NCardView(card: NCard(title: "Swift", text: "Programming", type: .medium))
-        NCardView(card: NCard(title: "UI Design", text: "Best Practices", type: .small))
-        NCardView(card: NCard(title: "Networking", text: "API Calls", type: .medium))
-        NCardView(card: NCard(title: "Concurrency", text: "Async/Await", type: .small))
-        NCardView(card: NCard(title: "Security", text: "Encryption", type: .medium))
-        NCardView(card: NCard(title: "Cloud", text: "AWS & Azure", type: .small))
-        NCardView(card: NCard(title: "Databases", text: "SQL & NoSQL", type: .medium))
+        NCardView(card: NCard(title: "Hello", text: "World", type: .small, isFav: false))
+        NCardView(card: NCard(title: "Swift", text: "Programming", type: .medium, isFav: true))
+        NCardView(card: NCard(title: "UI Design", text: "Best Practices", type: .small, isFav: false))
+        NCardView(card: NCard(title: "Networking", text: "API Calls", type: .medium, isFav: false))
+        NCardView(card: NCard(title: "Concurrency", text: "Async/Await", type: .small, isFav: false))
+        NCardView(card: NCard(title: "Security", text: "Encryption", type: .medium, isFav: true))
+        NCardView(card: NCard(title: "Cloud", text: "AWS & Azure", type: .small, isFav: true))
+        NCardView(card: NCard(title: "Databases", text: "SQL & NoSQL", type: .medium, isFav: false))
     }
 }

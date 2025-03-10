@@ -10,10 +10,10 @@ import SwiftUI
 struct NListView: View {
     
     let cards: [NCard] = [
-        NCard(title: "Card 1", text: "Texto del card 1", type: .small),
-        NCard(title: "Card 2", text: "Texto del card 2", type: .medium),
-        NCard(title: "Card 3", text: "Texto del card 3", type: .small),
-        NCard(title: "Card 4", text: "Texto del card 4", type: .small)
+        NCard(title: "Card 1", text: "Texto del card 1", type: .small, isFav: false),
+        NCard(title: "Card 2", text: "Texto del card 2", type: .medium, isFav: false),
+        NCard(title: "Card 3", text: "Texto del card 3", type: .small, isFav: false),
+        NCard(title: "Card 4", text: "Texto del card 4", type: .small, isFav: false)
     ]
     
     var body: some View {
