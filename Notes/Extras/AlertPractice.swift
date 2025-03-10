@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AlertPractice: View {
     @State var showAlert: Bool = false
+    @State var showSheet: Bool = false
     var body: some View {
         VStack{
             Button("Show Alert") {
@@ -23,6 +24,17 @@ struct AlertPractice: View {
                 print("Cancelar")
             }
         }
+        .padding(.bottom, 20)
+        
+        VStack{
+            Button("Show Sheet") {
+                showSheet = true
+            }
+        }
+        .sheet(isPresented: $showSheet) {
+            NCreateNoteView()
+        }
+        
     }
 }
 

@@ -13,10 +13,13 @@ struct NCreateNoteView: View {
     @State private var size: NcardType = .small
     @State private var isFavorite: Bool = false
     
+    var onNoteCreated: ((NCard) -> Void)?
+    
     func onTap() {
         //crear nota
         let card = NCard(title: title, text: text, type: size, isFav: isFavorite)
         print("Esta es tu nueva card: \(card)")
+        onNoteCreated?(card)
     }
     var body: some View {
         ScrollView{
