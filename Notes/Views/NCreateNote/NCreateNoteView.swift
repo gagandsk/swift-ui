@@ -8,16 +8,13 @@
 import SwiftUI
 
 struct NCreateNoteView: View {
-    @State private var title: String = ""
-    @State private var text: String = ""
-    @State private var size: NcardType = .small
-    @State private var isFavorite: Bool = false
+    @StateObject var viweModel: NCreateNoteViewModel = NCreateNoteViewModel()
     
     var onNoteCreated: ((NCard) -> Void)?
     
     func onTap() {
         //crear nota
-        let card = NCard(title: title, text: text, type: size, isFav: isFavorite)
+        let card = viweModel.createNote()
         print("Esta es tu nueva card: \(card)")
         onNoteCreated?(card)
     }
@@ -28,12 +25,12 @@ struct NCreateNoteView: View {
                     .font(.largeTitle)
                     .bold()
                     .padding(.bottom, 10)
-                TextField("Titulo", text: $title)
+                TextField("Titulo", text: $viweModel.title)
                     .font(.headline)
                     .padding()
                     .background(Color.gray.opacity(0.1))
                     .cornerRadius(8)
-                TextEditor(text: $text)
+                TextEditor(text: $viweModel.text)
                     .scrollContentBackground(.hidden)
                     .font(.body)
                     .frame(height: 150)
@@ -43,13 +40,13 @@ struct NCreateNoteView: View {
                 HStack{
                     Text("Tamaño")
                     Spacer()
-                    Picker("Tamaños", selection: $size) {
+                    Picker("Tamaños", selection: $viweModel.size) {
                         Label("Pequeño", systemImage: "widget.small").tag(NcardType.small)
                         Label("Mediano", systemImage: "widget.medium").tag(NcardType.medium)
                     }
                 }
                 .padding()
-                Toggle("Marcar como favorito", isOn: $isFavorite)
+                Toggle("Marcar como favorito", isOn: $viweModel.isFavorite)
                     .padding()
                 Button {
                     onTap()
