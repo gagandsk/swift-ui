@@ -10,6 +10,7 @@ import SwiftUI
 struct TextFieldPractice: View {
     
     @State var name: String = ""
+    @State var textEditorValue: String = ""
     @State var color: Color = Color.gray.opacity(0.2)
     
     var body: some View {
@@ -29,6 +30,22 @@ struct TextFieldPractice: View {
                     color = Color.gray.opacity(0.2)
                 }
             }
+        
+        TextEditor(text: $textEditorValue)
+            .font(.headline)
+            .padding()
+            .background(color)
+            .cornerRadius(8)
+            .scrollContentBackground(.hidden)
+            .padding()
+            .onChange(of: textEditorValue) { newValue in
+                if newValue.count > 50{
+                    color = .red
+                } else {
+                    color = Color.gray.opacity(0.2)
+                }
+            }
+            
     }
 }
 
