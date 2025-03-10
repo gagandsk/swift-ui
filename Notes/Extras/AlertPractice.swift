@@ -16,7 +16,12 @@ struct AlertPractice: View {
             }
         }
         .alert("Este es un mensaje de alerta", isPresented: $showAlert) {
-            
+            Button("Aceptar") {
+                print("Aceptar")
+            }
+            Button("Cancelar") {
+                print("Cancelar")
+            }
         }
     }
 }
