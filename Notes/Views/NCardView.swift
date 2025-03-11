@@ -10,6 +10,15 @@ import SwiftUI
 struct NCardView: View {
     
     let card: NCard
+    var onToggleFavorite: (() -> Void)?
+    func FavoriteButton() -> some View {
+        Image(systemName: card.isFav ? "heart.fill" : "heart")
+            .foregroundStyle(.red)
+            .onTapGesture {
+                onToggleFavorite?()
+            }
+    }
+    
     @ViewBuilder
     func CardSmallView() -> some View {
         HStack(spacing: 20) {
@@ -26,8 +35,7 @@ struct NCardView: View {
                 .lineLimit(2)
                 .multilineTextAlignment(.leading)
                 .frame(maxWidth: .infinity)
-            Image(systemName: "heart")
-                .foregroundStyle(.red)
+            FavoriteButton()
         }
         .frame(height: 75)
         .padding()
@@ -40,7 +48,7 @@ struct NCardView: View {
     func CardLargeView() -> some View {
         ZStack(alignment: .center){
             VStack{
-                Image(systemName: "heart").foregroundStyle(.red).frame(maxWidth:350,alignment: .trailing)
+                FavoriteButton()
                 HStack{
                     Text(card.title)
                         .font(.headline)
